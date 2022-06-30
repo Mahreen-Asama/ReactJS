@@ -4,6 +4,18 @@ import User from './User'       // to use any component, we need to import it
 import {User2} from './User'
 import {User3} from './User'
 import React,{useState, Component} from 'react' //useState is a hook, that allows us to maintain state/update state etc.
+import Student from './Student';
+
+//props in functional component
+function App3(){
+  return(
+    <div className="App">
+      <Student name="ali" email="ali@gmail.com" others={{age:12, address:"lahore"}} />
+      <Student name={"ahmad"} email="ahmad@gmail.com" others={{age:12, address:"lahore"}} />
+      <Student name={"saad"} email="saad@gmail.com" others={{age:12, address:"lahore"}} />
+    </div>
+  );
+}
 
 //States in class component
 class App2 extends Component{
@@ -50,7 +62,7 @@ function App() {
       <h1>Counter with functional component: {data}</h1>    
       <button onClick={updateData}>Counter +</button>
       <App2/>
-      
+      <App3/>
     </div>
   );
 }
