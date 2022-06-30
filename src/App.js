@@ -3,8 +3,31 @@ import './App.css';
 import User from './User'       // to use any component, we need to import it
 import {User2} from './User'
 import {User3} from './User'
-import {useState} from 'react' //useState is a hook, that allows us to maintain state/update state etc.
+import React,{useState, Component} from 'react' //useState is a hook, that allows us to maintain state/update state etc.
 
+//States in class component
+class App2 extends Component{
+  constructor(){
+    super();
+    this.state={
+      data:0           //data initialized to zerpo
+    }
+  }
+  updateData(){
+    this.setState({data:this.state.data+1});
+  }
+  render()
+  {
+    return(
+      <div className="App">
+        <h1>Counter with class component: {this.state.data}</h1>        
+        <button onClick={()=>this.updateData()}>Counter +</button>
+      </div>
+    )
+  }
+}
+
+// States in Funcctional Component
 function App() {
   const [data,setData]=useState(0);   //de-structure(extracting out parameters of this hook) this hook
 
@@ -26,9 +49,8 @@ function App() {
 
       <h1>Counter with functional component: {data}</h1>    
       <button onClick={updateData}>Counter +</button>
-
-      <h1>Counter with class component: {data}</h1>        
-      <button onClick={updateData}>Counter +</button>
+      <App2/>
+      
     </div>
   );
 }
