@@ -50,17 +50,42 @@ class App2 extends Component{
   }
 }
 // States in Funcctional Component
-function App() {
+function App1() {
   const [data,setData]=useState(0);   //de-structure(extracting out parameters of this hook) this hook
 
-  function apple(){
-    alert('function call');
-  }
   function updateData(){
     setData(data+1);          //get previous state value + 1
   }
   return (
     <div className="App">
+      <h1>Counter with functional component: {data}</h1>    
+      <button onClick={updateData}>Counter +</button>
+    </div>
+  );
+}
+
+//main component, running all components
+function App() {
+  const [inputValue,setData]=useState(null);    //for input field, onChange
+  const [input,printData]=useState(false);    //for input field, onCLick, (a boolean variable/state)
+
+  function apple(){
+    alert('function call');
+  }
+  function getData(val){
+    console.log(val);
+    setData(val.target.value);
+  }
+  return (
+    <div className="App">
+      <h1>{inputValue}</h1>
+      {
+        input?              //if this variable is true, print value, else null (Ternary statement)
+        <h1>{inputValue}</h1>
+        :null
+      }
+      <input type="text" onChange={getData}/>
+      <button onClick={()=>printData(true)}>Print Value</button>
       <h1>Hello world</h1>
       <User/>
       <User2/>
@@ -68,8 +93,7 @@ function App() {
       <button onClick={()=>alert('direct alert')}>button 1</button>
       <button onClick={()=>apple()}>button 2</button>
       <button onClick={apple}>button 3</button>
-      <h1>Counter with functional component: {data}</h1>    
-      <button onClick={updateData}>Counter +</button>
+      <App1/>
       <App2/>
       <App3/>
       <App4/>
