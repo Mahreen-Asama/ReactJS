@@ -68,6 +68,7 @@ function App1() {
 function App() {
   const [inputValue,setData]=useState(null);    //for input field, onChange
   const [input,printData]=useState(false);    //for input field, onCLick, (a boolean variable/state)
+  const [status,setStatus]=useState(true); 
 
   function apple(){
     alert('function call');
@@ -86,7 +87,11 @@ function App() {
       }
       <input type="text" onChange={getData}/>
       <button onClick={()=>printData(true)}>Print Value</button>
-      <h1>Hello world</h1>
+      {
+        status? <h1>Hello world</h1>:null
+      }
+      <br></br>
+      <button onClick={()=>setStatus(!status)}>Toggle</button>
       <User/>
       <User2/>
       <User3/>
