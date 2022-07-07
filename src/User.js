@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useCallback } from 'react';
 import React,{useState,Component} from 'react';
+import {GrandChild} from './Student';
 
 //class component
 
@@ -40,7 +41,7 @@ export function User2() {
   );
 }
 
-//Profile component to chek if-else conditions
+//Profile component to check if-else conditions
 export function Profile(){
   const[loggedIn,setLoggedIn]=useState(true);
   const[number,setNumber]=useState(3);
@@ -57,6 +58,20 @@ export function Profile(){
         :number==2? <h1>number is 2</h1>
         :<h1>Number is 3</h1>
       }
+      <hr></hr>
+    </div>
+  );
+}
+
+//child component which receives 'function' as props
+export function Child(pro){
+  function f2(){
+    alert('hello from child')
+  }
+  return(
+    <div>
+      <GrandChild data={f2}/>
+      <button onClick={pro.data}>Call function from parent</button>
       <hr></hr>
     </div>
   );

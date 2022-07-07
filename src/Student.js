@@ -28,3 +28,12 @@ export function Student(props) {
         </div>
     );
 }
+
+//for super-child, pass function as props
+export function GrandChild(props){
+    return(
+        <div>
+            <button onClick={props.data}>Call from child</button>
+        </div>
+    )
+}

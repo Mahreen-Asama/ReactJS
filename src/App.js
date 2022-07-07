@@ -8,6 +8,7 @@ import {Student} from './Student';
 import {Student2} from './Student';
 import {Form} from './Form';
 import {Profile} from './User';
+import {Child} from './User';
 
 //props in functional component
 function App3(){
@@ -83,8 +84,12 @@ function App() {
     console.log(val);
     setData(val.target.value);
   }
+  function func(){
+    alert('hello from parent');
+  }
   return (
     <div className="App">
+      <Child data={func}/> 
       <Profile/>
       <Form/>
       <h1>{inputValue}</h1>
