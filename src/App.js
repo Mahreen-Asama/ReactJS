@@ -6,6 +6,7 @@ import {User3} from './User'
 import React,{useState, Component} from 'react' //useState is a hook, that allows us to maintain state/update state etc.
 import {Student} from './Student';
 import {Student2} from './Student';
+import {Form} from './Form';
 
 //props in functional component
 function App3(){
@@ -14,6 +15,7 @@ function App3(){
       <Student name="ali" email="ali@gmail.com" others={{age:12, address:"lahore"}} />
       <Student name={"ahmad"} email="ahmad@gmail.com" others={{age:12, address:"lahore"}} />
       <Student name={"saad"} email="saad@gmail.com" others={{age:33, address:"lahore"}} />
+      <hr></hr>
     </div>
   );
 }
@@ -24,6 +26,7 @@ function App4(){
       <Student2 name="ali" age="34" others={{age:12, address:"lahore"}}/>
       <Student2 name="ali" age="55" others={{age:12, address:"lahore"}}/>
       <Student2 name="ali" age="34" others={{age:12, address:"lahore"}}/>
+      <hr></hr>
     </div>
   );
 }
@@ -45,6 +48,7 @@ class App2 extends Component{
       <div className="App">
         <h1>Counter with class component: {this.state.data}</h1>        
         <button onClick={()=>this.updateData()}>Counter +</button>
+        <hr></hr>
       </div>
     )
   }
@@ -60,6 +64,7 @@ function App1() {
     <div className="App">
       <h1>Counter with functional component: {data}</h1>    
       <button onClick={updateData}>Counter +</button>
+      <hr></hr>
     </div>
   );
 }
@@ -79,6 +84,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Form/>
       <h1>{inputValue}</h1>
       {
         input?              //if this variable is true, print value, else null (Ternary statement)
