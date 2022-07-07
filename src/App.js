@@ -7,6 +7,7 @@ import React,{useState, Component} from 'react' //useState is a hook, that allow
 import {Student} from './Student';
 import {Student2} from './Student';
 import {Form} from './Form';
+import {Profile} from './User';
 
 //props in functional component
 function App3(){
@@ -84,6 +85,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Profile/>
       <Form/>
       <h1>{inputValue}</h1>
       {
