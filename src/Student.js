@@ -4,6 +4,29 @@ import { useCallback } from 'react';
 import App from './App';
 import React, { Component } from 'react';
 
+//life cycle methods in class components
+export class LifeCycleMethods extends Component{
+    constructor(){
+        super();
+        console.log('construotr');
+        this.state={
+            data:"data",
+            data2:"data2"
+        }
+    }
+    render() {
+        console.log('render');
+        return (
+            <div className="App">
+                <h1>Hello states: {this.state.data},{this.state.data2}</h1>
+                <button onClick={()=>this.setState({data:"up",data2:"up2"})}>update state</button>
+                <h1>Hello props: {this.props.name}</h1>
+            </div>
+        )
+    }
+}
+
+//props in class components
 export class Student2 extends Component {
     render() {
         return (

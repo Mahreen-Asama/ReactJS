@@ -9,6 +9,7 @@ import {Student2} from './Student';
 import {Form} from './Form';
 import {Profile} from './User';
 import {Child} from './User';
+import {LifeCycleMethods} from './Student';
 
 //props in functional component
 function App3(){
@@ -76,6 +77,7 @@ function App() {
   const [inputValue,setData]=useState(null);    //for input field, onChange
   const [input,printData]=useState(false);    //for input field, onCLick, (a boolean variable/state)
   const [status,setStatus]=useState(true); 
+  const [name,setName]=useState("1st"); 
 
   function apple(){
     alert('function call');
@@ -89,6 +91,10 @@ function App() {
   }
   return (
     <div className="App">
+      <LifeCycleMethods name={name}/>
+      <button onClick={()=>setName("2nd")}>update props</button>
+      <hr></hr>
+
       <Child data={func}/> 
       <Profile/>
       <Form/>
